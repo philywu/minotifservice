@@ -1,0 +1,37 @@
+{
+    "version":"1.0",
+    "pages":[
+        {
+            "name":"notif_main",
+            "controller":"NotificationMainController",
+            "header":{
+                "title": "Notification",
+                "isHome":true,
+                "isBack":false
+                
+            },
+            "main":{
+                "div":"new_task"
+            },
+            "bottom":{
+
+            }
+        },
+        {
+            "name":"message_main",
+            "controller":"MessageMainController",
+            "header":{
+                "title": "Message",
+                "isHome":false,
+                "isBack":true
+                
+            },
+            "main":{
+                "div":"new_task"
+            },
+            "bottom":{
+
+            }
+        }
+    ]
+}

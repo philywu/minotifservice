@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="theme-color" content="#db5945">
+  <title>Login</title>
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/index.css">
+
+  <!-- <link href="css/custom-css-bootstrap.css" rel="stylesheet"> -->
+
+  <!-- Custom styles for this template -->
+
+  <style>
+    body {
+      padding-top: 0;
+    }
+
+    header {
+      padding-top: 32px;
+      padding-bottom: 24px;
+    }
+
+    .footer {
+      
+      height: 100px;
+      width: 100%;
+      margin-top:30px;
+    }
+
+    .main-div {
+      border-radius: 2px;
+      margin: 20px auto;
+      padding: 32px 20px 32px 20px;
+    }
+    
+
+
+    @media (min-width: 992px) {
+      body {
+        /*padding-top: 56px;*/
+      }
+      header {
+        padding-top: 56px;
+        padding-bottom: 24px;
+        margin-bottom: 32px;
+      }
+      .main-div {
+        border: solid 1px #cccccc;
+
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  <!-- Page Content -->
+  <header class="bg-primary text-white">
+    <div class="container text-center">
+      <h1>MiService</h1>
+    </div>
+  </header>
+  
+  <div class="m-2" id="d_loginInfo">
+  </div>
+  <div id="page_login" class="container">
+      
+    <div class="row">
+      <div class="main-div col-sm-4">
+          <button class="mx-auto mt-3 btn btn-primary d-none" id="btn_add2home">Add to Home Screen?</button>
+        
+        <!-- <div class="panel">
+          <h2>Looks your are not login yet</h2>
+          <p>Please enter your email and password</p>
+        </div> -->
+        <form id="f_login" enctype="multipart/form-data">
+
+          
+          <div class="form-group">
+            <input type="email" class="form-control" id="i_username" name="userName" value="woophily3@outlook.com" placeholder="Email Address" required/>
+            <div class="invalid-feedback">
+                Please input correct email address.
+              </div>
+          </div>
+
+          <div class="form-group">
+            <input type="password" class="form-control" id="i_password" name="password" value="123456" placeholder="Password" required/>
+            <div class="invalid-feedback">
+                Password cannot be empty.
+              </div>
+          </div>
+          <div class="form-group">
+            <input type="checkbox" id="ch_remember" checked>
+            <label for="ch_remember">Remeber me next time</label>
+          </div>
+          <button type="button" id="b_submit" class="btn btn-primary full-length-button">Login</button>
+          <div class="footer text-center">
+              <div class="forgot ">
+                <a class="text-center text-primary" href="reset.html">Forgot password?</a>
+              </div>
+              <div class="forgot " >
+                Don't have an account?
+                <a id="a_register" class='text-primary' href="#">Register</a>
+              </div>
+            </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+  
+<!-- register page-->
+<div id="page_register" class="container">
+    <div class="row">
+      <div class="main-div col-sm-4">
+        <div id="d_loginInfo">
+        </div>
+        <form id="f_register">
+
+          <div class="form-group">
+            <input type="text" class="form-control" id="i_firstname" name="firstName" placeholder="First Name" required/>
+            <div class="invalid-feedback">
+                Please input your first name.
+              </div>
+          </div>
+          <div class="form-group">
+              <input type="text" class="form-control" id="i_lastname" name="lastName" placeholder="Last Name" required/>
+              <div class="invalid-feedback">
+                  Please input your last name.
+                </div>
+            </div>
+            <!-- <div class="form-group">
+                <input type="text" class="form-control" id="i_mobile" name="mobile" placeholder="Mobile Number" required/>
+                <div class="invalid-feedback">
+                    Please input your mobile number.
+                  </div>
+              </div> -->
+              <div class="form-group">
+                  <input type="email" class="form-control" id="i_email" name="email" placeholder="Email Address" required/>
+                  <div class="invalid-feedback">
+                      Please input correct email address.
+                    </div>
+                </div>
+      
+          <div class="form-group">
+            <input type="password" class="form-control" id="i_newpassword" name="newPassword" placeholder="Password" required/>
+            <div class="invalid-feedback">
+                Password cannot be empty.
+              </div>
+          </div>
+          
+          <button type="button" id="b_register" class="btn btn-primary full-length-button" >Register</button>
+          <div class="text-center">
+              
+              <div class="forgot " >
+                Back to
+                <a id="a_login" class='text-primary' href="#">Login</a>
+              </div>
+            </div>
+
+        </form>
+        </div>
+    </div>
+</div>
+
+  <!-- Static Modal -->
+  <div class="modal modal-static fade" id="processing-modal" role="dialog" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="row align-items-center">
+        <div class="col text-center text-primary">
+          <i class="fa fa-spinner fa-spin" style="font-size:24px"></i>
+          <p>Loading</p>
+          <!-- <h4>Processing... <button type="button" class="close" style="float: none;" data-dismiss="modal" aria-hidden="true">×</button></h4> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+  crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+  <script type="module" src="./scripts/login.js" async></script>
+</body>
+
+</html>

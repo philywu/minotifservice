@@ -32,6 +32,23 @@
             "bottom":{
 
             }
+        },
+        {
+            "name":"barcode",
+            "controller":"BarcodeController",
+            "header":{
+                "title": "Barcode",
+                "isHome":false,
+                "isBack":true
+                
+            },
+            "main":{
+                "div":"new_task"
+            },
+            "bottom":{
+
+            }
         }
+
     ]
 }

@@ -111,8 +111,10 @@ class NotificationMainController extends BaseController {
 
      //  btnNew.addEventListener("click", this.clickButtonAction);
        document.querySelector("#toMessage").addEventListener("click",evt =>{
-           console.log("click");
            this.app.route("message_main");
+       });
+       document.querySelector("#b_barcode").addEventListener("click",evt =>{
+           this.app.route("barcode");
        });
        this.showPrintContent = this.showPrintContent.bind(this);
        $('#myModal').on('show.bs.modal',this.showPrintContent);

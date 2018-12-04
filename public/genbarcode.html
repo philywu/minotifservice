@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi">
+  <meta name="description" content="">
+  <meta name="author" content="Phily">
+  <title>MiService</title>
+  <link rel="manifest" href="/manifest.json">
+
+  <!-- Bootstrap core CSS -->
+  <link href="./css/custom.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+    crossorigin="anonymous">
+
+  <!-- <link href="css/custom-css-bootstrap.css" rel="stylesheet"> -->
+
+  <!-- Custom styles for this template -->
+
+  <style>
+    body {
+        padding-top: 54px;
+      }
+      
+      /* .footer {
+          height:10vh;
+      } */
+      #barcode_list{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items:flex-start;
+        align-content: flex-start;
+      }
+      #barcode_list div{
+        flex-grow: 1;
+        height:100px;
+        width:300px;
+        margin:20px;
+      }
+    </style>
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top  pr-0">
+    <div id="pageHeader" class="container">
+      <a href="javascript:history.back(-1)"><i class="fas fa-chevron-left text-white"></i></a>
+      <h4 class="text-left text-white">Generate BarCode</h4>
+      <div id="headerRight" class="navbar-brand float-right">
+        <i class="fas fa-bars"></i>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container main mt-2">
+    <div id="barcode_list">
+
+    </div>
+
+  </div>
+  <!-- <footer class="container footer bg-light ">    
+  </footer> -->
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+    <script src="./vendor/JsBarcode.code39.min.js"></script>
+
+  <script type="module" src="../scripts/genbarcode.js" async></script>
+</body>
+
+</html>

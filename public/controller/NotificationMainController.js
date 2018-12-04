@@ -3,6 +3,9 @@ import {BaseController} from "./BaseController.js";
 import {
     RemoteUtil
 } from "../util/util.js";
+import {
+    start
+} from "../util/print.js"
 const NOTIFICATION_SENDER1 = "hitools"
 class NotificationMainController extends BaseController {
     constructor(args) {
@@ -110,7 +113,48 @@ class NotificationMainController extends BaseController {
        document.querySelector("#toMessage").addEventListener("click",evt =>{
            console.log("click");
            this.app.route("message_main");
-       })
+       });
+       this.showPrintContent = this.showPrintContent.bind(this);
+       $('#myModal').on('show.bs.modal',this.showPrintContent);
+
+       document.querySelector("#b_print").addEventListener("click",evt =>{        
+        const options = {
+            printable: "printdiv",
+            type: 'html',
+            header: null,
+            maxWidth: '50em',
+            direction:"landscape",
+            font: 'TimesNewRoman',
+            font_size: '12pt',
+            honorMarginPadding: true,
+            honorColor: false,
+            properties: null,
+            frameId: 'printJS',
+            border: true,
+            htmlData: ''
+        };
+        start (options);
+    });
+
+
+    document.querySelector("#b_back").addEventListener("click",evt =>{   
+        
+        $('#myModal').modal('hide');
+        let printDiv = document.querySelector("#printdiv");
+        printDiv.innerHTML = "";
+    });
+}
+
+    async showPrintContent(event) {
+        
+            // var button = $(event.relatedTarget) // Button that triggered the modal
+             //var recipient = button.data('whatever') // Extract info from data-* attributes
+            const reportName = event.relatedTarget.value; 
+             let printDiv = document.querySelector("#printdiv");
+            console.log(this.app.page);
+              let html = await this.app.page.getPrintFile(reportName);
+              printDiv.innerHTML = html;
+        
     }
     registerEventCard(cardListDiv) {
         let app = this.app; 

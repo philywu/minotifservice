@@ -2,6 +2,7 @@ import {ControllerFactory} from "../controller/controller.js";
 
 var _CONFIG_FILE_PATH = "../config/config.json";
 var _FRAGMENT_FILE_EXT = ".fragment.html";
+var _PRINT_FILE_EXT = ".print.html";
 var _VIEW_FILE_PATH = "../view/";
 
 const _FETCH_ARGS = {
@@ -70,6 +71,16 @@ class Page {
     
     async getFragmentFile(viewName){
         const fileName = _VIEW_FILE_PATH+viewName+_FRAGMENT_FILE_EXT; 
+       
+        try {
+            let res = await fetch(fileName,_FETCH_ARGS);
+            return res.text();
+        } catch(err) {
+            return null; 
+        }
+    }
+    async getPrintFile(viewName){
+        const fileName = _VIEW_FILE_PATH+viewName+_PRINT_FILE_EXT; 
        
         try {
             let res = await fetch(fileName,_FETCH_ARGS);

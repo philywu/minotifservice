@@ -14,5 +14,16 @@ export default {
         "NOTIFICATION_MAIN":"notif_main",
         "PM_MAIN":"pm_main",
         "TASK_DETAIL":"task_detail"
+    },
+    PRINT_OPTION:{
+        LANDSCAPE:{
+            direction:"landscape",
+            paper_height: "209mm",
+        },
+        PORTRAIT : {
+            direction:"portrait",
+            paper_height: "371mm",
+        }
+        
     }
 }

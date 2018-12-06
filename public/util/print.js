@@ -201,11 +201,11 @@ export class Print {
         // update printableElement variable with newly created DOM element
         printableElement = document.getElementById('printJS-html');
         // get main element styling
-        printableElement.setAttribute('style', this.collectStyles(printableElement) + 'margin:0 !important;');
+       //printableElement.setAttribute('style', this.collectStyles(printableElement) + 'margin:0 !important;');
         // get all children elements
         let elements = printableElement.children;
         // get styles for all children elements
-        this.loopNodesCollectStyles(elements);
+       //this.loopNodesCollectStyles(elements);
         // add header if any
         if (this.options.header) {
             this.addHeader(printableElement);
@@ -213,7 +213,7 @@ export class Print {
         // remove DOM printableElement
         printableElement.parentNode.removeChild(printableElement);
         // store html data
-        this.options.htmlData = addWrapper(printableElement.innerHTML);
+        this.options.htmlData = this.addWrapper(printableElement.innerHTML);
         // print html element contents
         return this.print();
     }
@@ -239,7 +239,7 @@ export class Print {
         // function to build html templates for json data
         htmlData += this.jsonToHTML();
         // store html data
-        this.options.htmlData = addWrapper(htmlData);
+        this.options.htmlData = this.addWrapper(htmlData);
         // print json data
         this.print();
     }
@@ -439,11 +439,18 @@ export class Print {
             throw new Error('Invalid print type. Available types are: pdf, html, image and json.');
         }
     }
+    addWrapper (htmlData) {
+    
+        let bodyStyle = 'font-family:' + this.options.font + ' !important; font-size: ' + this.options.font_size + ' !important; width:100%;height:'+this.options.paper_height+' !important;';
+        return '<div style="' + bodyStyle + '">' + htmlData + '</div>';
+    
+    //    return '<div style="' + BODY_STYLE + '">' + htmlData + '</div>';
+    
+}
+    
 }
 
-function addWrapper (htmlData) {
-    return '<div style="' + BODY_STYLE + '">' + htmlData + '</div>';
-}
+
 
 // capitalize string
 function capitalizePrint (string) {

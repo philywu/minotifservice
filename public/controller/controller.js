@@ -2,7 +2,7 @@ import GLOBAL from '../scripts/constants.js';
 
 import {NotificationMainController} from './NotificationMainController.js';
 import {MessageMainController} from './MessageMainController.js';
-import {BarcodeController} from './BarcodenController.js';
+import {BarcodeController} from './BarcodeController.js';
 
 const controllerClasses = {NotificationMainController,MessageMainController,BarcodeController};
 var controllerInstances = [];

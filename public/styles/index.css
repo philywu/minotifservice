@@ -87,22 +87,22 @@
   height:100%;
  }
 .portrait {
-   width :44em;
-  height: calc(44em * 1.4143);
+  width :48em;
+  height: calc(48em * 1.4143);
   font-size: 8.5pt;
 }
 
 .landscape {
-  height: 44em;
-  width :calc(44em * 1.4143);  
+  height: 49em;
+  width :calc(49em * 1.4143);  
   font-size: 12pt; 
 }
 #printpage {
   float: left;
-  padding:1em;
+  padding:0;
   margin : 0 auto;
   
-  margin-top:1em;
+  margin-top:0.5em;
   border: solid 1px #000;
 
 }
@@ -112,8 +112,8 @@
   padding-left:2em;
   float:left;
   /* border: solid 1px #000; */
-  width :calc(100vw - calc(48em*1.4143) - 25px);
-  height: 46em;
+  width :100px;/*calc(100vw - calc(44em*1.4143) - 25px);*/
+  height: 44em;
 }
 
 .report-header2{

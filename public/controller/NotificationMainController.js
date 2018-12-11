@@ -113,6 +113,9 @@ class NotificationMainController extends BaseController {
        document.querySelector("#toMessage").addEventListener("click",evt =>{
            this.app.route("message_main");
        });
+       document.querySelector("#b_msg_client").addEventListener("click",evt =>{
+        this.app.route("message_client");
+    });
        document.querySelector("#b_barcode").addEventListener("click",evt =>{
            this.app.route("barcode");
        });

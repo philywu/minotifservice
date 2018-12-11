@@ -54,19 +54,27 @@ import {
                 var providerData = user.providerData;
                 console.log("login done", user, email);
 
-                if (app.registerInfo){
-                    user.updateProfile({
-                        displayName: app.registerInfo.displayName                        
-                      }).then(function() {
-                        // Update successful.
-                        console.log("display updated")
-                        app.registerInfo = null;
-                      }).catch(function(error) {
-                        // An error happened.
-                        app.displayErrorMessage(error);
-                      });
-                }
+                // if (app.registerInfo){
+                //     user.updateProfile({
+                //         displayName: app.registerInfo.displayName                        
+                //       }).then(function() {
+                //         // Update successful.
+                //         console.log("display updated")
+                //         app.registerInfo = null;
+                //       }).catch(function(error) {
+                //         // An error happened.
+                //         app.displayErrorMessage(error);
+                //       });
+                // }
                 window.location.replace('./app.html');
+                // if (app.registerInfo){ // if it is just after register, show login page again.
+                //     document.querySelector("#i_username").value = app.registerInfo.email;
+                //     document.querySelector("#i_password").value = app.registerInfo.password;
+                //     app.registerInfo = null;
+                // }else { //if it is normal login, go to main page
+                //     window.location.replace('./app.html');
+                // }
+                
                 // [START_EXCLUDE]
 
                 // [END_EXCLUDE]
@@ -75,6 +83,7 @@ import {
                 // [START_EXCLUDE]
 
                 // [END_EXCLUDE]
+               
             }
             // [START_EXCLUDE silent]
 
@@ -145,11 +154,22 @@ import {
         firebase.auth().createUserWithEmailAndPassword(registerInfo.email, registerInfo.password)
             .then(function (newUserCred){
                 if (newUserCred){
-
-                    app.showPage = "L";
-                    app.toggleDisplay();
-                    const msg = {title:"Registered successfully",content:"user "+registerInfo.displayName + " has been registered, please login"};
-                    app.displaySuccessMessage(msg)
+                                        
+                    newUserCred.user.updateProfile({
+                        displayName: app.registerInfo.displayName                        
+                      }).then(function() {
+                        // Update successful.
+                        console.log("display updated")
+                        // app.showPage = "L";
+                        // app.toggleDisplay();
+                        // const msg = {title:"Registered successfully",content:"user "+registerInfo.displayName + " has been registered, please login"};
+                        // app.displaySuccessMessage(msg)
+                        
+                      }).catch(function(error) {
+                        // An error happened.
+                        app.displayErrorMessage(error);
+                      });
+                   
                 }
             })
             .catch(function (error) {

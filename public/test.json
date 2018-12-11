@@ -1,0 +1,10 @@
+{
+    "notificationMessage": "test",
+    "pushSubscription": {
+        "endpoint": "https://fcm.googleapis.com/fcm/send/dCjcpmVPmqI:AP…GpPYOvJVwLP6EL__b7NFHNfbxL6Vez91TLaE1NoQJ7zfkrNCK",
+        "keys": {
+            "auth": "khjtOTHXbfadnD2YD83jsQ",
+            "p256dh": "BPHkRpQ88AdUBoX2h27tJVA7mByyZ7jIEFDbABuqX-sa5w4K8LQOxxn-rh-xja1Vqvc-vPwJqc8EVeLgtWeC7Lw"
+        }
+    }
+}

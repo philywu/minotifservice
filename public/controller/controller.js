@@ -2,9 +2,10 @@ import GLOBAL from '../scripts/constants.js';
 
 import {NotificationMainController} from './NotificationMainController.js';
 import {MessageMainController} from './MessageMainController.js';
+import {MessageClientController} from './MessageClientController.js';
 import {BarcodeController} from './BarcodeController.js';
 
-const controllerClasses = {NotificationMainController,MessageMainController,BarcodeController};
+const controllerClasses = {NotificationMainController,MessageMainController,BarcodeController,MessageClientController};
 var controllerInstances = [];
 class ControllerFactory {
     static getInstance(name) {

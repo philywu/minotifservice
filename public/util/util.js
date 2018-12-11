@@ -94,8 +94,7 @@ class RemoteUtil {
             };
         }
         try {
-            const rawResponse = await fetch(url, {
-                mode:'no-cors',
+            const rawResponse = await fetch(url, {                
                 method: sendMethod,
                 headers: header,
                  body:JSON.stringify(postBody)

@@ -13,15 +13,29 @@
   </ul>
   <div class="tab-content pm-main" id="pills-tabContent">
     <div class="tab-pane fade show active" id="pane_1" role="tabpanel" aria-labelledby="tab_1">
-      <div class="pm-card-list">
-        message here
-        <div class="form_group">
-          <input type="text" id="i_message" value="">          
-        </div>
-        <div class="form_group">
-            <button class="btn btn-primary mt-5" type="text" id="b_submit"> Submit</button>         
+      <div class="pm-card-list ">
+
+        <div class="row mt-2">
+          <div class="col-3 text-right"><button class="btn btn-light" data-toggle="modal" data-target="#myModal" >Reciever</button></div>
+          <div class="col-9">
+            <div class="receiver">
+              <ul>
+
+              </ul>
+            </div>
           </div>
-      </div>
+        </div>
+          <div class="row mt-2">
+            <div class="col-3 text-right">Message</div>
+            <div class="col-9"><textarea class="form-control" id="i_message" rows="8"> </textarea> </div>
+          </div>
+          <div clas="row">
+            <div class="form_group text-right">
+              <button class="btn btn-primary mt-5" type="text" id="b_submit"> Submit</button>
+            </div>
+          </div>
+        </div>
+  
     </div>
     <div class="tab-pane fade" id="pane_2" role="tabpanel" aria-labelledby="tab_2">
       <div class="pm-card-list">
@@ -35,14 +49,14 @@
           <div class="card-text text-secondary">
 
             <div class="form-check float-right ">
-              
+
             </div>
             <div>Allow Notification</div>
           </div>
           <!-- <div class="card-text text-danger">Reminder</div>                       -->
         </div>
       </div>
-      
+
 
     </div>
     <div class="footer">
@@ -51,3 +65,43 @@
       </div>
     </div>
   </div>
+</div>
+<div class="modal" id="myModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Choose Receivers</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table id="tbl_receiver_list"  class="table">
+            <thead class="thead-light">
+            <tr>
+              <th></th>
+              <th>User</th>
+              <th>Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>Luke</td>
+              <td>lukel@gmail.com</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>Luke</td>
+                <td>lukel@gmail.com</td>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button id="b_choose" type="button" class="btn btn-primary" data-dismiss="modal">Choose</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

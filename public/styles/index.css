@@ -251,3 +251,32 @@
   text-align: center;
 }
 
+/* .receiver ul {
+  display: flex;
+  flex-wrap:wrap;
+  justify-content:flex-start;
+} */
+
+.receiver ul {
+  margin:0;
+  padding:0;
+}
+
+.receiver li {
+  display: inline-block;
+  list-style: none;  
+  /* flex : 1;
+  flex-shrink:1; */
+  margin:2px;
+  padding:2px;
+}
+.receiver li span {
+  margin-left:2px;
+}
+
+
+/* 
+.receiver li::after {
+  content :"X";
+  margin-left: 5px;
+} */

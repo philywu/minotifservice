@@ -34,6 +34,22 @@
             }
         },
         {
+            "name":"message_client",
+            "controller":"MessageClientController",
+            "header":{
+                "title": "Message",
+                "isHome":false,
+                "isBack":true
+                
+            },
+            "main":{
+                "div":"new_task"
+            },
+            "bottom":{
+
+            }
+        },
+        {
             "name":"barcode",
             "controller":"BarcodeController",
             "header":{

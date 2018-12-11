@@ -25,9 +25,9 @@ self.addEventListener('push', function(event) {
   console.log('[Service Worker] Push Received.');
   console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
 
-  const title = 'Push Codelab';
+  const title = 'Message from Hitools';
   const options = {
-    body: `[Message from Hitools] ${event.data.text()}.`,
+    body: `[Hitools:] ${event.data.text()}.`,
     icon: 'images/icon.png',
     badge: 'images/badge.png'
   };

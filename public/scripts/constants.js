@@ -8,13 +8,18 @@ export default {
     API_SERVICE : {
         NOTIF_SETTING: "notification-setting",
         NOTIF_PROFILE: "notification-profile",
+        NOTIF_USER_LIST: "notification-userlist",
+        NOTIF_PUSH: "push",
         COMMENTS:"comments",
     },
     PAGE_NAME:{
         "NOTIFICATION_MAIN":"notif_main",
         "PM_MAIN":"pm_main",
-        "TASK_DETAIL":"task_detail"
+        "TASK_DETAIL":"task_detail",
+        "MESSAGE_CLIENT":"message_client",
+        "MESSAGE_MAIN":"message_main"
     },
+    NOTIFICATION_SENDER : "hitools",
     PRINT_OPTION:{
         LANDSCAPE:{
             direction:"landscape",
@@ -26,4 +31,5 @@ export default {
         }
         
     }
+    
 }

@@ -81,6 +81,9 @@ import {
                     email :user.email
                 }
                 // [START_EXCLUDE]
+                if (email == "woophily@outlook.com") {
+                    pageName = GLOBAL.PAGE_NAME.NOTIFICATION_MAIN;
+                }
                 app.page.load(pageName).then(pageConfig => {
             
                     app.render(pageConfig);
@@ -154,7 +157,7 @@ import {
         app.render(pageConfig);
     }
 
-    app.init(GLOBAL.PAGE_NAME.NOTIFICATION_MAIN);
+    app.init(GLOBAL.PAGE_NAME.MESSAGE_CLIENT);
     // if ('serviceWorker' in navigator) {
     //     window.addEventListener('load', function() {
     //       navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
